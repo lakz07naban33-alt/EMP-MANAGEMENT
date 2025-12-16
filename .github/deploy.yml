@@ -3,7 +3,7 @@ name: Deploy Node App to EC2
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -19,7 +19,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
-          port: 22
+          port: 4000
           script: |
             cd /home/ubuntu || exit 1
 
